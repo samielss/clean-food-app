@@ -2,7 +2,7 @@ import React from "react";
 import { Pressable } from "react-native";
 import { View,TextInput, StyleSheet } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
-import CommonStyles from "../CommonStyles";
+import CommonStyles from "../defaultStyle";
 
 
 

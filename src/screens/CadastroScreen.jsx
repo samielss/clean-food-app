@@ -1,16 +1,18 @@
 //Importando dependências do projeto
 import React, { Component } from "react";
-import { Image, ImageBackground, SafeAreaView, StyleSheet, View } from "react-native";
+import { Image, ImageBackground, Pressable, SafeAreaView, StyleSheet, View } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import { Text } from "@rneui/themed"
+import { Button, Text } from "@rneui/themed"
 //importando imagens 
-import CommonStyles from "../CommonStyles";
+import CommonStyles from "../defaultStyle";
 import getImgBackground from "../../assets/img/CadastroBackground.png"
-import getImgFood from "../../assets/img/imgDaTelaCadastro.png"
+import getImgFood from "../../assets/img/prato-um.png"
 
 //Importando componentes
 import Input from "../components/Input";
+import { color } from "@rneui/base";
+import defaultStyle from "../defaultStyle";
 
 
 
@@ -20,22 +22,24 @@ export default class CadastroScreen extends Component {
     render() {
 
         return (
-            < SafeAreaView style={styles.body}>
-                <ImageBackground source={getImgBackground} style={styles.background}>
+            <SafeAreaView style={styles.body}>
+                <ImageBackground source={getImgBackground} style={styles.background} resizeMode="cover">
 
                     <View style={styles.container1}>
-                        <Text h1 style={styles.title}>Clean Food</Text>
-                        <Image source={getImgFood} />  
+                        <Text style={styles.title}>Clean Food</Text>
+                        <Image source={getImgFood} />
+                        <Text style={styles.subTitle}>Criar uma conta</Text>
                     </View>
 
                     <View style={styles.container2}>
-                        <Text style={styles.subTitle}>Criar uma conta</Text>
                         <Input placeholder="Name" iconName="user" />
                         <Input placeholder="Email" iconName="at" />
                         <Input placeholder="Nova senha" iconName="lock" />
                         <Input placeholder="Confirmar senha" iconName="lock" />
                     </View>
-
+                    <Pressable style={styles.button}>
+                        <Text style={{ color: defaultStyle.colors.rosaSalmao, fontSize: 15 }}>Criar conta</Text>
+                    </Pressable>
                 </ImageBackground>
             </SafeAreaView>
         )
@@ -49,29 +53,38 @@ const styles = StyleSheet.create(
             justifyContent: "center",
         },
         background: {
-            flex: 1
+            flex: 1,
+            alignItems: "center",
+            paddingTop: 80
         },
         container1: {
-            alignItems:"center",
-            marginTop:100
-            
+            alignItems: "center"
         },
-        container2:{
-            alignItems:"center",
-            justifyContent:"space-between",
+        container2: {
+            alignItems: "center",
+            justifyContent: "space-between",
         },
         title: {
-            fontFamily: "Jomhuria",
-            color: CommonStyles.colors.primary,
-            fontWeight: "400",
+            fontFamily: "johmuria",
+            color: CommonStyles.colors.creme,
+            fontWeight: "bold",
+            fontSize: 45
 
         },
         subTitle: {
-            fontFamily: CommonStyles.fontFamily,
-            color: CommonStyles.colors.primary,
-            fontSize: "50%"
-            fontSize: 40,
-            margin:10
+            color: CommonStyles.colors.creme,
+            fontSize: 45,
+            margin: 10,
+            fontWeight: "bold"
+        },
+        button: {
+            width: "30%",
+            padding: 10,
+            backgroundColor: CommonStyles.colors.creme,
+            borderRadius: 20,
+            alignItems: "center",
+            justifyContent: "center",
+            marginVertical: 40
         }
     }
 )
