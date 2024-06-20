@@ -7,7 +7,6 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import CommonStyles from "../CommonStyles";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
-const Tab = createBottomTabNavigator
 
 export default class HomeScreen extends Component {
 
@@ -15,9 +14,6 @@ export default class HomeScreen extends Component {
 
         return(
             <SafeAreaView style={styles.home}>
-                <NavigationContainer>
-                    
-                </NavigationContainer>
                 <Text style={styles.titulo}>Bem vindo</Text>
             </SafeAreaView>
         );
