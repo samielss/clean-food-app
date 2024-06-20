@@ -65,7 +65,7 @@ const styles = StyleSheet.create(
             justifyContent: "space-between",
         },
         title: {
-            fontFamily: "johmuria",
+            fontFamily: 'Jomhuria',
             color: CommonStyles.colors.creme,
             fontWeight: "bold",
             fontSize: 45
