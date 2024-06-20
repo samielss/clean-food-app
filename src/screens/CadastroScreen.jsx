@@ -68,7 +68,7 @@ const styles = StyleSheet.create(
         subTitle: {
             fontFamily: CommonStyles.fontFamily,
             color: CommonStyles.colors.primary,
-            fontSize: 60
+            fontSize: "50%"
         }
     }
 )
