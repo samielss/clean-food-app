@@ -22,8 +22,6 @@ import api from '../services/Api'
 //Criando componente de class ("Esse será o compnente visto pelo usuário")
 export default props => {
     
-    const []
-    
         return (
             <SafeAreaView style={styles.body}>
                 <ImageBackground source={getImgBackground} style={styles.background} resizeMode="cover">
