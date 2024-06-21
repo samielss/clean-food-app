@@ -1,33 +1,28 @@
+//Importando dependências do projeto
 import React from "react";
-import { Pressable } from "react-native";
+//Importando componentes
 import { View,TextInput, StyleSheet } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import CommonStyles from "../defaultStyle";
+import defaultStyle from "../defaultStyle";
 
 
 
 export default props => {
 
     return(
-        <View >
-
-            <Pressable style={styles.container}>
-
+            <View style={styles.container}>
                 <TextInput
                     style={styles.input}
                     label={props.label}
                     textAlign="left"
-                    keyboardType="name-phone-pad"
+                    keyboardType={props.keyboardType}
                     placeholder={props.placeholder}
                     maxLength={60}
-                    placeholderTextColor="#FFECD6"
+                    placeholderTextColor={defaultStyle.colors.creme}
                 />
                 <Icon name={props.iconName} size={20} color="#FFECD6" style={styles.icon}/>
-
-            </Pressable>
-
-        </View>
-
+            </View>
     )
 }
 
@@ -40,17 +35,15 @@ const styles = StyleSheet.create(
             borderBottomWidth:1,
             borderColor:"#FFECD6",
             borderRadius:6,
+            width:"70%",
             
         },
         input:{
-            fontFamily: CommonStyles.fontFamily,
             fontWeight:"bold",
-            alignItems:"flex-end",
-            width:250,
-            marginTop:10
         },
         icon:{
-            marginRight:5
+            marginRight:5,
+            padding: 5
         }
     }
 )
