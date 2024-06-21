@@ -4,7 +4,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import CommonStyles from "../CommonStyles";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
 
