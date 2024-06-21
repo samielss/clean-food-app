@@ -1,5 +1,5 @@
 //Importando dependências do projeto
-import React, { Component } from "react";
+import React,{ Component,useState,useEffect } from "react";
 import { Image, ImageBackground, Pressable, SafeAreaView, StyleSheet, View } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -14,13 +14,16 @@ import Input from "../components/Input";
 import { color } from "@rneui/base";
 import defaultStyle from "../defaultStyle";
 
+//Importando a api
+import api from '../services/Api'
+
 
 
 //Criando componente de class ("Esse será o compnente visto pelo usuário")
-export default class CadastroScreen extends Component {
-
-    render() {
-
+export default props => {
+    
+    const []
+    
         return (
             <SafeAreaView style={styles.body}>
                 <ImageBackground source={getImgBackground} style={styles.background} resizeMode="cover">
@@ -43,7 +46,7 @@ export default class CadastroScreen extends Component {
                 </ImageBackground>
             </SafeAreaView>
         )
-    }
+    
 }
 
 const styles = StyleSheet.create(

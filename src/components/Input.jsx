@@ -8,6 +8,7 @@ import CommonStyles from "../defaultStyle";
 
 export default props => {
 
+    
     return(
         <View >
 
