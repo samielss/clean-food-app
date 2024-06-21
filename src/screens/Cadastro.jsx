@@ -18,10 +18,15 @@ import defaultStyle from "../defaultStyle";
 import api from '../services/Api'
 
 
-
-//Criando componente de class ("Esse será o compnente visto pelo usuário")
 export default props => {
     
+    const [user,setUser] = useState([])
+    const [email,setEmail] = useState([])
+    const [senha,setSenha] = useState([])
+    const [csenha,setCsenha] = useState([])
+
+ 
+
         return (
             <SafeAreaView style={styles.body}>
                 <ImageBackground source={getImgBackground} style={styles.background} resizeMode="cover">
@@ -33,12 +38,12 @@ export default props => {
                     </View>
 
                     <View style={styles.container2}>
-                        <Input placeholder="Name" iconName="user" />
-                        <Input placeholder="Email" iconName="at" />
-                        <Input placeholder="Nova senha" iconName="lock" />
-                        <Input placeholder="Confirmar senha" iconName="lock" />
+                        <Input placeholder="Name" iconName="user" valor={(user) => setUser = (user)}/>
+                        <Input placeholder="Email" iconName="at" valor={(email) => setUser = (user)}/>
+                        <Input placeholder="Nova senha" iconName="lock" valor={(user) => setUser = (user)} />
+                        <Input placeholder="Confirmar senha" iconName="lock"  valor={(user) => setUser = (user)}/>
                     </View>
-                    <Pressable style={styles.button}>
+                    <Pressable style={styles.button} >
                         <Text style={{ color: defaultStyle.colors.rosaSalmao, fontSize: 15 }}>Criar conta</Text>
                     </Pressable>
                 </ImageBackground>

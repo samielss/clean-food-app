@@ -1,5 +1,5 @@
 //Importando dependências do projeto
-import React from "react";
+import React, {useState} from "react";
 //Importando componentes
 import { View,TextInput, StyleSheet } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -8,8 +8,10 @@ import defaultStyle from "../defaultStyle";
 
 
 
+
 export default props => {
 
+    const [valor,setValor] = useState()
     
     return(
             <View style={styles.container}>
@@ -21,6 +23,7 @@ export default props => {
                     placeholder={props.placeholder}
                     maxLength={60}
                     placeholderTextColor={defaultStyle.colors.creme}
+                    value={valor}
                 />
                 <Icon name={props.iconName} size={20} color="#FFECD6" style={styles.icon}/>
             </View>
