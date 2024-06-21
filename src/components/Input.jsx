@@ -2,9 +2,7 @@ import React from "react";
 import { Pressable } from "react-native";
 import { View,TextInput, StyleSheet } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
-import CommonStyles from "../CommonStyles";
-
-
+import CommonStyles from "../defaultStyle";
 
 
 
@@ -24,7 +22,7 @@ export default props => {
                     maxLength={60}
                     placeholderTextColor="#FFECD6"
                 />
-                <Icon name={props.iconName} size={20} color="#FFECD6"/>
+                <Icon name={props.iconName} size={20} color="#FFECD6" style={styles.icon}/>
 
             </Pressable>
 
@@ -37,16 +35,22 @@ const styles = StyleSheet.create(
     {
         container:{
             flexDirection:"row",
-            alignItems:"center",
-            justifyContent:"center", 
-        },
-        input:{
-            fontFamily: CommonStyles.fontFamily,
-            margin:15,
+            alignItems:"flex-end",
+            justifyContent:"space-between", 
             borderBottomWidth:1,
             borderColor:"#FFECD6",
             borderRadius:6,
-            width: 225
+            
+        },
+        input:{
+            fontFamily: CommonStyles.fontFamily,
+            fontWeight:"bold",
+            alignItems:"flex-end",
+            width:250,
+            marginTop:10
+        },
+        icon:{
+            marginRight:5
         }
     }
 )
