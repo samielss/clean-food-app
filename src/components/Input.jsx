@@ -24,6 +24,8 @@ export default props => {
                     maxLength={60}
                     placeholderTextColor={defaultStyle.colors.creme}
                     value={valor}
+                   
+
                 />
                 <Icon name={props.iconName} size={20} color="#FFECD6" style={styles.icon}/>
             </View>

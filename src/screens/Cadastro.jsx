@@ -1,6 +1,6 @@
 //Importando dependências do projeto
 import React,{ Component,useState,useEffect } from "react";
-import { Image, ImageBackground, Pressable, SafeAreaView, StyleSheet, View } from "react-native";
+import { Alert, Image, ImageBackground, Pressable, SafeAreaView, StyleSheet, View } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { Button, Text } from "@rneui/themed"
@@ -25,7 +25,14 @@ export default props => {
     const [senha,setSenha] = useState([])
     const [csenha,setCsenha] = useState([])
 
- 
+    const hanleCadastro = async (event) => {
+        
+//Verfificando as senhas 
+        if(senha !== csenha){
+            Alert.alert('As senhas não coincidem');
+            return;
+        }
+    }
 
         return (
             <SafeAreaView style={styles.body}>
@@ -38,12 +45,12 @@ export default props => {
                     </View>
 
                     <View style={styles.container2}>
-                        <Input placeholder="Name" iconName="user" valor={(user) => setUser = (user)}/>
-                        <Input placeholder="Email" iconName="at" valor={(email) => setUser = (user)}/>
-                        <Input placeholder="Nova senha" iconName="lock" valor={(user) => setUser = (user)} />
-                        <Input placeholder="Confirmar senha" iconName="lock"  valor={(user) => setUser = (user)}/>
+                        <Input placeholder="Name" iconName="user" valor={user}   onChangeText={(e) => setUser(e.target.valor)}/>
+                        <Input placeholder="Email" iconName="at" valor={email} onChangeText={(e) => setEmail(e.target.valor)}/>
+                        <Input placeholder="Nova senha" iconName="lock" valor={senha}  onChangeText={(e) => setSenha(e.target.valor)}/>
+                        <Input placeholder="Confirmar senha" iconName="lock"  valor={csenha} onChangeText={(e) => setCsenha(e.target.valor)}/>
                     </View>
-                    <Pressable style={styles.button} >
+                    <Pressable style={styles.button}  >
                         <Text style={{ color: defaultStyle.colors.rosaSalmao, fontSize: 15 }}>Criar conta</Text>
                     </Pressable>
                 </ImageBackground>
