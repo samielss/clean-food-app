@@ -2,6 +2,7 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Cadastro from "../screens/Cadastro";
+import Tab from "./Tab";
 //Importando componentes
 
 // Criando o componente de função
@@ -14,6 +15,13 @@ export default props => {
                 //Personalizando a Stack
                 options={{
                     headerShown: false
+                }}
+                />
+                <Stack.Screen name="Tab" component={Tab}
+                //Personalizando a Stack
+                options={{
+                    headerShown: false
+                    
                 }}
                 />
             </Stack.Navigator>

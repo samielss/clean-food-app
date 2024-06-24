@@ -11,6 +11,7 @@ import getImgFood from "../../assets/img/prato-um.png"
 //Importando componentes
 import Input from "../components/Input";
 import defaultStyle from "../defaultStyle";
+import EntrarSemCadastro from "../components/EntrarSemCadastro";
 
 
 
@@ -20,7 +21,7 @@ export default props => {
     return (
         <View style={styles.body}>
             <ImageBackground source={getImgBackground} style={styles.background} resizeMode="cover">
-                <Pressable style={{ flex: 1 }}><Text style={styles.entrar}>Entrar sem cadastro</Text></Pressable>
+                <EntrarSemCadastro route={() => props.navigation.navigate('Tab')}/>
                 <View style={styles.container1}>
                     <Text style={styles.title}>Clean Food</Text>
                     <Image source={getImgFood} />
@@ -33,7 +34,7 @@ export default props => {
                     <Input placeholder="Confirmar senha" iconName="lock" />
                 </View>
                 <View style={styles.container3}>
-                <Pressable style={styles.button}>
+                <Pressable style={styles.button} >
                     <Text style={{ color: defaultStyle.colors.rosaSalmao, fontSize: 15 }}>Criar conta</Text>
                 </Pressable>
                 </View>
