@@ -3,13 +3,10 @@ import { SafeAreaView, StyleSheet, Text,} from "react-native";
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
 
-export default class HomeScreen extends Component {
-
-    render() {
+export default props =>{
 
         return(
             <SafeAreaView style={styles.home}>
@@ -17,7 +14,7 @@ export default class HomeScreen extends Component {
             </SafeAreaView>
         );
     }   
-}
+
 const styles = StyleSheet.create(
     {
         home:{
@@ -25,12 +22,12 @@ const styles = StyleSheet.create(
             backgroundColor:"#483F68"
         },
         titulo:{
-            marginTop:150,
-            marginHorizontal:125,
+            marginTop:40,
+            textAlign: "center",
             fontSize:40,
             color:"#FFECD6",
-            fontFamily:"Jomhuria",
-            fontWeight:"bold"
+            fontWeight:"bold", 
+            fontFamily: "Jomhuria"
         },
     }
 )
