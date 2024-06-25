@@ -10,15 +10,15 @@ use dbcleanfood;
 -- Criando as tabelas 
 create table tbusuarios(
 codUsuario int not null auto_increment,
-datanasc date not null,
-endereco varchar(50) not null,
-cidade varchar(50) not null,
-bairro varchar(50) not null,
-cep char(9) not null,
+datanasc date,
+endereco varchar(50),
+cidade varchar(50),
+bairro varchar(50),
+cep char(9) ,
 nome varchar(100) not null,
-cpf char(14) not null unique,
+cpf char(14) unique,
 email varchar(40) not null,
-telCel char(10) not null,
+telCel char(10) ,
 senha varchar(8) not null,
 primary key(codUsuario)         
 );

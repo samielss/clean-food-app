@@ -1,6 +1,6 @@
 //Importando dependências do projeto
-import React,{useState,useEffect } from "react";
-import {Image, ImageBackground, Pressable, SafeAreaView, StyleSheet, View } from "react-native";
+import React,{useState,useEffect, useId } from "react";
+import {Alert, Image, ImageBackground, Pressable, SafeAreaView, StyleSheet, View } from "react-native";
 import { Button, Text } from "@rneui/themed"
 
 //importando imagens e estilo geral 
@@ -15,35 +15,46 @@ import defaultStyle from "../defaultStyle";
 
 //Importando a api
 import api from '../services/Api'
+import axios from "axios";
 
 
 export default props => {
   
-//Criando os destrutores 
-    const [user,setUser] = useState([])
-    const [email,setEmail] = useState([])
-    const [senha,setSenha] = useState([])
-    const [confirmaSenha,setConfirmaSenha] = useState([])
-    const [err,setErr] = useState([])
+//Criando os destrutores para entratada de texto 
+    const [user,setUser] = useState('')
+    const [email,setEmail] = useState('')
+    const [senha,setSenha] = useState('')
+    const [confirmaSenha,setConfirmaSenha] = useState('')
 
-    const hanleCadastro = async (event) => {
-        
-//Verfificando as senhas 
-        const validatePassword = () => {
-            if( senha !== confirmaSenha){
-                    setErr('As senhas não coincidem');
-                        return false;
-            }   
-            setErr('')
-            return true;
+    const [err,setErr] = useState('')
+
+ //Verificando as senhas
+    const validadoSenha = () => {
+        if (senha !== confirmaSenha) {
+            setErr('As senhas não coincidem');
+                return false;
+        }
+        setErr('')
+        return true;
+};
+
+//Ligação da api 
+    const registro = async (event) => {
+        event.preventDefault()
+
+        if(validadoSenha()){
+            const response = await axios.post('http://localhost:3000/usuarios', {
+                nome: user,
+                email: email,
+                senha: senha
+            });
         }
 
-//
-    const handleSignUp = () => {
-        if(validatePassword()){
-            console.log('conta criada com sucesso!')
-        }
-    }
+    };
+
+
+
+
         return (
             <SafeAreaView style={styles.body}>
                 <ImageBackground source={getImgBackground} style={styles.background} resizeMode="cover">
@@ -55,19 +66,19 @@ export default props => {
                     </View>
 
                     <View style={styles.container2}>
-                        <Input placeholder="Name" iconName="user" valor={user}   onChangeText={(e) => setUser(e.target.valor)}/>
-                        <Input placeholder="Email" iconName="at" valor={email} onChangeText={(e) => setEmail(e.target.valor)}/>
-                        <Input placeholder="Nova senha" iconName="lock" valor={senha}  onChangeText={(e) => setSenha(e.target.valor)}/>
-                        <Input placeholder="Confirmar senha" iconName="lock"  valor={confirmaSenha} onChangeText={(e) => setConfirmaSenha(e.target.valor)}/>
+                        <Input placeholder="Name" iconName="user" value={user} onChangeText={setUser}/>
+                        <Input placeholder="Email" iconName="at" value={email} onChangeText={setEmail}/>
+                        <Input placeholder="Nova senha" iconName="lock" value={senha} onChangeText={setSenha}/>
+                        <Input placeholder="Confirmar senha" iconName="lock"  value={confirmaSenha} onChangeText={setConfirmaSenha}/>
                     </View>
-                    <Pressable style={styles.button} >
+                    <Pressable style={styles.button} onPress={registro}>
                         <Text style={{ color: defaultStyle.colors.rosaSalmao, fontSize: 15 }}>Criar conta</Text>
                     </Pressable>
                 </ImageBackground>
             </SafeAreaView>
         )
     
-}
+
 }
 
 const styles = StyleSheet.create({

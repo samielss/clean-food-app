@@ -11,8 +11,7 @@ import defaultStyle from "../defaultStyle";
 
 export default props => {
 
-    const [valor,setValor] = useState()
-    
+ 
     return(
             <View style={styles.container}>
                 <TextInput
@@ -23,7 +22,8 @@ export default props => {
                     placeholder={props.placeholder}
                     maxLength={60}
                     placeholderTextColor={defaultStyle.colors.creme}
-                    value={valor}
+                  
+
                    
 
                 />
