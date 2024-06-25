@@ -4,6 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { createDrawerNavigator } from "@react-navigation/drawer";
+import Carrossel from "../components/Carrossel";
+
 
 
 export default props =>{
@@ -11,6 +13,7 @@ export default props =>{
         return(
             <SafeAreaView style={styles.home}>
                 <Text style={styles.titulo}>Bem vindo</Text>
+                <Carrossel/>
             </SafeAreaView>
         );
     }   
@@ -24,10 +27,9 @@ const styles = StyleSheet.create(
         titulo:{
             marginTop:40,
             textAlign: "center",
-            fontSize:40,
+            fontSize:70,
             color:"#FFECD6",
-            fontWeight:"bold", 
-            fontFamily: "Jomhuria"
+            fontFamily: 'Jomhuria'
         },
     }
 )

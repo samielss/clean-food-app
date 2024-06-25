@@ -21,11 +21,26 @@ export default props => {
                 options={
                     {
                         headerBackgroundContainerStyle: {backgroundColor: "#483F68"},
-                        headerStyle: { backgroundColor: "#7C73C0", borderBottomRightRadius: 30, borderBottomLeftRadius: 30, height: 90 },
+                        headerStyle: {
+                            backgroundColor: "#7C73C0", 
+                            borderBottomRightRadius: 30, 
+                            borderBottomLeftRadius: 30, 
+                            height: 90
+                        },
                         title: "Clean Food",
+                        headerTitleStyle: {
+                            fontFamily: 'Jomhuria', 
+                            fontSize: 70, 
+                            position: "absolute"
+                        },
                         headerRight: ({ color }) => (
-                            <View style={{backgroundColor:"#1E1A39", borderRadius: 50, padding: 10, marginRight: 10}}>
-                            <Image source={require('../../assets/img/chef-icon.png')} style={{ width: 50, height: 50 }} />
+                            <View style={{backgroundColor:"#1E1A39", 
+                            borderRadius: 50, 
+                            padding: 10, 
+                            marginRight: 30}}>
+                            <Image source={require('../../assets/img/chef-icon.png')} style={{ 
+                                width: 50, 
+                                height: 50 }} />
                             </View>
                         ),
                         headerTintColor: "#FFECD6",
