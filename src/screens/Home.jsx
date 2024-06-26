@@ -13,6 +13,7 @@ export default props =>{
         return(
             <SafeAreaView style={styles.home}>
                 <Text style={styles.titulo}>Bem vindo</Text>
+                <Text style={styles.titulo2}>Título do Feed</Text>
                 <Carrossel/>
             </SafeAreaView>
         );
@@ -28,6 +29,13 @@ const styles = StyleSheet.create(
             marginTop:40,
             textAlign: "center",
             fontSize:70,
+            color:"#FFECD6",
+            fontFamily: 'Jomhuria'
+        },
+        titulo2:{
+            marginTop:5,
+            textAlign: "center",
+            fontSize:50,
             color:"#FFECD6",
             fontFamily: 'Jomhuria'
         },
