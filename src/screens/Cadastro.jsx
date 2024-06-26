@@ -30,7 +30,7 @@ export default props => {
 
  //Verificando as senhas
     const validadoSenha = () => {
-        if (senha !== confirmaSenha) {
+        if (senha == confirmaSenha) {
             setErr('As senhas não coincidem');
                 return false;
         }
@@ -38,25 +38,10 @@ export default props => {
         return true;
 };
 
-//Ligação da api 
-    const registro = async (event) => {
-        event.preventDefault()
-
-        if(validadoSenha()){
-            const response = await axios.post('http://localhost:3000/usuarios', {
-                nome: user,
-                email: email,
-                senha: senha
-            });
-        }
-
-    };
-
-
 
 
         return (
-            <SafeAreaView style={styles.body}>
+            <SafeAreaView style={styles.body} >
                 <ImageBackground source={getImgBackground} style={styles.background} resizeMode="cover">
 
                     <View style={styles.container1}>
@@ -71,7 +56,7 @@ export default props => {
                         <Input placeholder="Nova senha" iconName="lock" value={senha} onChangeText={setSenha}/>
                         <Input placeholder="Confirmar senha" iconName="lock"  value={confirmaSenha} onChangeText={setConfirmaSenha}/>
                     </View>
-                    <Pressable style={styles.button} onPress={registro}>
+                    <Pressable style={styles.button}>
                         <Text style={{ color: defaultStyle.colors.rosaSalmao, fontSize: 15 }}>Criar conta</Text>
                     </Pressable>
                 </ImageBackground>
