@@ -8,6 +8,7 @@ import { FlatList } from "react-native";
 import data from "../data/data"
 //Importando componentes
 const {width} = Dimensions.get("window")
+
 // Criando o componente de função
 export default props => {
     function getListItem({ item: recipe }) {
@@ -15,7 +16,7 @@ export default props => {
                 <View style={Style.card}>
                     <View style={Style.itensCard}>
                         <Text style={Style.tituloCard}>{recipe.title}</Text>
-                        {/* <Text style={Style.descricaoCard}>{recipe.desc}</Text> */}
+                        {/* <Text style={Style.descricaoCard}>{recipe.id}</Text> */}
                         <Pressable style={Style.buttonCard} onPress={() => navigate.navigation()}>
                             <Text style={Style.buttonText}>Ver receita</Text>
                         </Pressable>
@@ -27,10 +28,9 @@ export default props => {
     return (
         <FlatList
             horizontal
-            snapToAlignment={"start"}
+            snapToAlignment={"center"}
             keyExtractor={recipe => recipe.id.toString()}
             showsHorizontalScrollIndicator={false}
-            snapToOffsets={[...Array(data.lenght)].map((x,i)=> i * (width*0.8-40) + (i-1)*40)}
             decelerationRate="fast"
             data={data}
             renderItem={getListItem}
@@ -46,7 +46,7 @@ const Style = StyleSheet.create(
             height: width / 2.5,
             width: width * 0.8,
             justifyContent: "space-between",
-            marginHorizontal: 10,
+            marginHorizontal: 20,
             borderRadius: 10
         },
         itensCard: {

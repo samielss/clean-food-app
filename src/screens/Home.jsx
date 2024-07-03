@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { SafeAreaView, StyleSheet, Text,} from "react-native";
+import { SafeAreaView, ScrollView, StyleSheet, Text,} from "react-native";
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -12,9 +12,15 @@ export default props =>{
 
         return(
             <SafeAreaView style={styles.home}>
+                <ScrollView>
                 <Text style={styles.titulo}>Bem vindo</Text>
                 <Text style={styles.titulo2}>Título do Feed</Text>
                 <Carrossel/>
+                <Text style={styles.titulo2}>Título do Feed</Text>
+                <Carrossel/>
+                <Text style={styles.titulo2}>Título do Feed</Text>
+                <Carrossel/>
+                </ScrollView>
             </SafeAreaView>
         );
     }   
