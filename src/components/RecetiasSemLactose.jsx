@@ -5,7 +5,7 @@ import React from "react";
 import { View, TextInput, StyleSheet, Text, Pressable, Image } from "react-native";
 import { Dimensions } from "react-native";
 import { FlatList } from "react-native";
-import data from "../data/data"
+import data from "../data/semlactose"
 //Importando componentes
 const {width} = Dimensions.get("window")
 
@@ -21,7 +21,7 @@ export default props => {
                             <Text style={Style.buttonText}>Ver receita</Text>
                         </Pressable>
                     </View>
-                    <Image source={require("../../assets/img/default-image.png")} style={Style.image} />
+                    <Image source={{uri: recipe.url}} style={Style.image} />
                 </View>
         )
     }
@@ -44,7 +44,7 @@ const Style = StyleSheet.create(
             flexDirection: "row",
             backgroundColor: "#1E1A39",
             height: width / 2.5,
-            width: width * 0.8,
+            maxWidth: width * 0.8,
             justifyContent: "space-between",
             marginHorizontal: 20,
             borderRadius: 10
@@ -54,8 +54,8 @@ const Style = StyleSheet.create(
             padding: 15
         },
         tituloCard: {
-            fontSize: 23,
-            width: "70%",
+            fontSize: 21,
+            maxWidth: "70%",
             color: "#FFECD6",
             fontWeight: "bold"
         },

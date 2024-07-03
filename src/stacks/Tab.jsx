@@ -16,7 +16,7 @@ export default props => {
     const Tab = createBottomTabNavigator()
 
     return (
-        <Tab.Navigator initialRouteName="Search" screenOptions={{ tabBarStyle: { backgroundColor: "#1E1A39", height: 70 } }}>
+        <Tab.Navigator initialRouteName="Home" screenOptions={{ tabBarStyle: { backgroundColor: "#1E1A39", height: 70 } }}>
             <Tab.Screen name="Home" component={Home}
                 options={
                     {
